@@ -35,7 +35,11 @@ server.register([require('inert'), require('vision'), require('hapi-auth-cookie'
     isSecure: false,
     ttl: 24 * 60 * 60 * 1000,
   });
-  
+
+  server.auth.default({
+    strategy: 'standard',
+  });
+
   server.route(require('./routes'));
 
   server.start((err) => {
