@@ -39,6 +39,10 @@ exports.register = {
       password: Joi.string().required(),
     },
 
+    options: {
+      abortEarly: false,
+    },
+
     failAction: function (request, reply, source, error) {
       reply.view('signup', {
         title: 'Sign up error',
